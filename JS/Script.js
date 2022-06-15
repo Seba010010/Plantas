@@ -42,7 +42,7 @@ window.addEventListener('load', ()=> {
          //const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${AQUI_VIENE_TU_API_KEY}`
 
          //ubicación por ciudad
-         const url = 'https://api.openweathermap.org/data/2.5/weather?q=Santiago&APPID=d92580f775301ffa57fa15570bc4dd69'
+         const url = 'https://api.openweathermap.org/data/2.5/weather?q=Santiago&units=metric&lang=es&APPID=d92580f775301ffa57fa15570bc4dd69'
 
          //console.log(url)
 
