@@ -340,3 +340,40 @@ body{
 .container-form .btn-enviar:hover{
     background: darkgreen;
 }
+
+
+/*Nosotros*/
+
+.nosotros{
+    color: #fff;
+    width: 100%;
+    max-width: 750px;
+    text-align: center;
+}
+
+.parrafo1{
+    color: #fff;
+    font-size: 15px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.content-sub{
+    width: 100%;
+    margin-top: 5%;
+    background-color:white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+
+.container-sub{
+    background-color: #fff;
+    flex-direction: column;
+}
