@@ -18,6 +18,70 @@ function validarFormContacto(){
         alert("El campo mensaje no puede estar vacio")
     }
 }
+
+function validarFormSub(){
+    let emailSubInput  = document.getElementById("emailSub");
+    let emailSub = emailSubInput.value;
+
+    if(!emailSub){
+      alert(`El campo email no puede estar vacio`);
+    }
+
+}
+
+function validarFormLogin(){
+  let nombreInput = document.getElementById("nombreUsuario");
+  let passInput   = document.getElementById("usuarioPass");
+
+  console.log(nombreInput.value);
+
+  let nombre = nombreInput.value;
+  let pass   = passInput.value;
+
+  if(!nombre){
+    alert("El nombre no puede estar vacio")
+  }
+
+  if(!pass){
+    alert("La contraseña no puede estar vacia")
+  }
+
+}
+
+function validarFormRegistro(){
+
+  
+  let nombreInput   = document.getElementById("nombres");
+  let apellidoInput = document.getElementById("apellidos");
+  let correoInput   = document.getElementById("correo");
+  let passwordInput = document.getElementById("password");
+
+  let nombre = nombreInput.value;
+  let apellido = apellidoInput.value;
+  let correo = correoInput.value;
+  let password = passwordInput.value;
+
+  console.log(`${nombre} ${apellido} ${correo} ${password}`)
+
+
+  if(!nombre){
+    alert("El nombre no puede estar vacio")
+  }
+  
+  if(!apellido){
+    alert("El apellido no puede estar vacio")
+  }
+
+  if(!correo){
+    alert("El correo  no puede estar vacio")
+  }
+
+  if(!password){
+    alert("La contraseña no puede estar vacia")
+  }
+
+
+}
 //:::::::::::::::Consumo de API Openweathermap::::::::::::::://
 
 window.addEventListener('load', ()=> {
@@ -39,12 +103,10 @@ window.addEventListener('load', ()=> {
          lon = posicion.coords.longitude
          lat = posicion.coords.latitude
           //ubicación actual    
-         //const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${AQUI_VIENE_TU_API_KEY}`
+         //const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=$d92580f775301ffa57fa15570bc4dd69`
 
          //ubicación por ciudad
-         const url = 'https://api.openweathermap.org/data/2.5/weather?q=Santiago&units=metric&lang=es&APPID=d92580f775301ffa57fa15570bc4dd69'
-
-         //console.log(url)
+         const url = 'https://api.openweathermap.org/data/2.5/weather?q=Santiago&APPID=d92580f775301ffa57fa15570bc4dd69'
 
          fetch(url)
           .then( response => { return response.json()})
@@ -62,12 +124,7 @@ window.addEventListener('load', ()=> {
               
               vientoVelocidad.textContent = `${data.wind.speed} m/s`
               
-              //para iconos estáticos
-              //const urlIcon = `http://openweathermap.org/img/wn/${iconCode}.png`                     
-              //icono.src = urlIcon
-              //console.log(data.weather[0].icon)
-
-              //para iconos dinámicos
+              //iconos dinámicos
               console.log(data.weather[0].main)
               switch (data.weather[0].main) {
                   case 'Thunderstorm':
