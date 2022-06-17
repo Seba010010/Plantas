@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -10,9 +11,9 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link href="Estilos/Style.css" rel="stylesheet" />
-    <title>Nosotros</title>
-    <link rel="icon" type="image/x-icon" href="/img/Demeter - vivero.png">
+    <link href="{% static 'core/Estilos/Style.css'%}" rel="stylesheet" />
+    <title>ONG</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'core/img/Demeter - vivero.png'%}">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,10 +28,11 @@
             <h1>MANGLAR</h1>
         </div>
         <nav class="menu">
-            <a href="Home.html">Home</a>
-            <a href="Tienda.html">Tienda</a>
-            <a href="Nosotros.html">ONG</a>
-            <a href="Contacto.html">Contacto</a>
+            <a href="{% url 'Home' %}">Home</a>
+            <a href="{% url 'Tienda'%}">Tienda</a>
+            <a href="{% url 'Nosotros'%}">ONG</a>
+            <a href="{% url 'Contacto'%}">Contacto</a>
+            <a href="{% url 'Myaccount'%}">Mi Cuenta</a>
         </nav>
     </div>
 </header>
@@ -70,31 +72,19 @@
                     </div>
                     
                     <div class="curveado">
-                        <img src="img/img2.svg">
+                        <img src="{% static 'core/img/img2.svg'%}">
                     </div>
                 </div>
-
-                    <!-- ini formulario de suscripción  -->
-                    <div class= "container-sub">
-                        <div class = "content-sub">
-                            <h2>Suscribete! </h2>
-                            <!-- <p>Sin Spam, ¡Sólo nuestas últimas novedades y noticias!</p> -->
-                            <form action="#">
-                                <input type="email" class="campo" placeholder="Introduce tu correo">
-                                <input type="submit" value="Suscribirme" class="btn-sub">
-                            </form>
-                        </div>
-                    </div>
-                    <!-- fin formulario de suscripción --> 
             </div>
-        </div>
-        
+        </div>  
         <!--:::::::ini personal:::::::-->
         <div class ="destacados">
+            <br>
+            <h1 id="titulo-staff">Nuestro Equipo</h1>
             <div class="container_dest">
                 <div class="box_dest">
                     <a href="#">
-                        <img src="img/Nosotros1.jpg">
+                        <img src="{% static 'core/img/Nosotros1.jpg'%}">
                         <div class="capa">
                             <span> 
                                 Javiera Plaza 
@@ -115,13 +105,13 @@
                             </span>
                             
                         </div>
-                        <img src="img/Nosotros2.jpg"> 
+                        <img src="{% static 'core/img/Nosotros2.jpg'%}"> 
                     </a>
                 </div>
                 
                 <div class="box_dest">
                     <a href="#">
-                        <img src="img/Nosotros3.jpg">
+                        <img src="{% static 'core/img/Nosotros3.jpg'%}">
                         <div class="capa">
                             <span> 
                                 Max Maximo 
@@ -132,7 +122,22 @@
                     </a>
                 </div>
             </div> 
-        </div>    
+        </div>
+        <!--::::::ini formulario de suscripción::::::-->
+        <div class="franja-sub">
+            <div class= "container-sub">
+                <div class = "content-sub">
+                    <h2 >Suscribete a <i>Manglar</i></h2>
+                        <p>Sin Spam, ¡Sólo nuestas últimas novedades y noticias!</p>
+                        <form action="#" autocomplete="off">
+                        <input type="email" name= "emailSub" class="campo" placeholder="Introduce tu correo" id="emailSub">
+                        <input type="submit" value="Suscribirme" class="btn-sub" onclick="validarFormSub()">
+                        </form>
+                    </div>
+                </div>
+            </div>    
+        </div>
+    <!--::::::fin formulario de suscripción:::::: -->    
     <!--:::::::fin nosotros:::::::--> 
 
     <!--:::::::fin portada:::::::-->
@@ -143,7 +148,7 @@
             <div class="box">
                 <figure>
                     <a href="#">
-                        <img src="img/Demeter - vivero.png" alt="Logo de Manglar">
+                        <img src="{% static 'core/img/Demeter - vivero.png'%}" alt="Logo de Manglar">
                     </a>
                 </figure>
             </div>
@@ -168,5 +173,9 @@
             <small>&copy; 2021 <b>Manglar</b> - Todos los Derechos Reservados.</small>
         </div>
     </footer>
+    <!--Importacion de javascript interno-->
+    <script src="{% static 'core/JS/Script.js'%}"></script>
 </body>
-</html>    
+<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+</html>     
