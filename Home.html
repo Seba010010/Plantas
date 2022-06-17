@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -10,9 +11,9 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link href="Estilos/Style.css" rel="stylesheet" />
+    <link href="{% static 'core/Estilos/Style.css'%}" rel="stylesheet" />
     <title>Home Manglar</title>
-    <link rel="icon" type="image/x-icon" href="/img/Demeter - vivero.png">
+    <link rel="icon" type="image/x-icon" href="{% static 'core/img/Demeter - vivero.png'%}">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,10 +28,11 @@
             <h1>MANGLAR</h1>
         </div>
         <nav class="menu">
-            <a href="Home.html">Home</a>
-            <a href="Tienda.html">Tienda</a>
-            <a href="Nosotros.html">ONG</a>
-            <a href="Contacto.html">Contacto</a>
+            <a href="{% url 'Home' %}">Home</a>
+            <a href="{% url 'Tienda' %}">Tienda</a>
+            <a href="{% url 'Nosotros' %}">ONG</a>
+            <a href="{% url 'Contacto' %}">Contacto</a>
+            <a href="{% url 'Myaccount' %}">Mi Cuenta</a>
         </nav>
     </div>
 </header>
@@ -45,20 +47,23 @@
                 <div class="contenido">
                     <div class="info">
                         <h1>By Wild con Manglar!</h1>
-                        <a href="#">Conocenos</a>
+                        <a href="Tienda.html">Conocenos</a>
                     </div>
                 </div>
                 <div class="curveado">
-                    <img src="img/img2.svg">
+                    {% load static %}
+                    <img src="{% static 'core/img/img2.svg'%}">
                 </div>
             </div>
         </div>
         <!--:::::::ini productos:::::::-->
-        <div class ="destacados">
+        <div class ="destacados"><br><br><br><br><br>
+            <h1 id="titulo-dest">Nuestros Productos</h1>
             <div class="container_dest">
                 <div class="box_dest">
-                    <a href="#">
-                        <img src="img/Rhapidophora.jpg">
+                    <a href="Tienda.html">
+                        {% load static %}
+                        <img src="{% static 'core/img/Rhapidophora.jpg'%}">
                         <div class="capa">
                             <h2>Plantas</h2>
                         </div>
@@ -66,8 +71,9 @@
                 </div>
                 
                 <div class="box_dest">
-                    <a href="#">
-                        <img src="img/macetero murta.jpg">
+                    <a href="Tienda.html">
+                        {% load static %}
+                        <img src="{% static 'core/img/macetero murta.jpg'%}">
                         <div class="capa">
                             <h2>Maceteros</h2>
                         </div>
@@ -75,8 +81,9 @@
                 </div>
                 
                 <div class="box_dest">
-                    <a href="#">
-                        <img src="img/regadera.webp">
+                    <a href="Tienda.html">
+                        {% load static %}
+                        <img src="{% static 'core/img/regadera.webp'%}">
                         <div class="capa">
                             <h2>Insumos</h2>
                         </div>
@@ -93,7 +100,8 @@
             <div class="box">
                 <figure>
                     <a href="#">
-                        <img src="img/Demeter - vivero.png" alt="Logo de Manglar">
+                        {% load static %}
+                        <img src="{% static 'core/img/Demeter - vivero.png'%}" alt="Logo de Manglar">
                     </a>
                 </figure>
             </div>
@@ -105,7 +113,7 @@
                 <p>Ayudanos a sensibilizar, desde la acción, a las personas sobre los efectos de la crisis climática, a través de la regeneración de bosque nativo.</p>
             </div>
             <div class="box">
-                <h2>Siguenos en nuestras RRHH</h2>
+                <h2>Siguenos en nuestras RRSS</h2>
                 <div class="red-social">
                     <a href="#" class="fa fa-facebook"></a>
                     <a href="#" class="fa fa-instagram"></a>
