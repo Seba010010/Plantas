@@ -9,7 +9,8 @@ from .views import Contacto
 
 urlpatterns = [
     path('', Contacto, name="Contacto"),
-    path('Contacto-form', Contacto, name= "Contacto")
+    path('Contacto-form', Contacto, name= "Contacto"),
+    path('Form-mod-Contacto/<id>', Form_mod_Contacto, name= "Form_mod_Contacto"),
 ]
 from django.urls import path
 from .views import Myaccount

@@ -32,7 +32,8 @@ def ContactoForm(request):
         'form':ContactoForm
     }
     if request.method=='post':
-        formulario = ContactoForm(request.post)
+        formulario = ContactoForm(data= request.post, instance= Contacto)
+
         
         if formulario.is_valid:
             formulario.save
@@ -40,7 +41,11 @@ def ContactoForm(request):
 
     return render(request, 'core/ContactoForm.html', datos)
 
-
+def Form_mod_Contacto(request, id):
+    Contacto = ContactoForm.objects.get(nombre = id)
+    datos = {
+        'form': ContactoForm(instance = Contacto)
+    }
 
 def tienda(request):
     productos = producto.objects.all()
