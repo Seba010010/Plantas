@@ -501,6 +501,17 @@ body{
 }
 /*fin API clima*/
 
+/* ini franja productos*/
+
+.producto{
+    background-color: brown;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 /*/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
 /*inicio vista mi cuenta*/

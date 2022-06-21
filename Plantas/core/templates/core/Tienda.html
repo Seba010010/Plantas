@@ -56,7 +56,24 @@
         <h1 id="viento-velocidad"></h1>
     </div>
   </div>
-  </div>
+  </div> <br>
+  <div  class = "producto">
+    <table id="Productos" class="table-bordered table-sm">
+          <tr>
+            <td>Id Producto</td>
+            <td>Nombre</td>
+            <td>Precio</td>
+            <td>Categoria</td>
+          </tr>
+          {% for pr in producto %}
+          <tr>
+            <td>{{pr.Id_producto}}</td>
+            <td>{{pr.Nombre}}</td>
+            <td>{{pr.Categoria}}</td>
+          </tr>
+          {% endfor %}  
+    </table>        
+  </div><br>
   <!--::::ini pie de Pagina::::::-->
 <footer class="pie-pagina">
   <div class="grupo-1">

@@ -47,7 +47,7 @@
                 <div class="contenido">
                     <div class="info">
                         <h1>By Wild con Manglar!</h1>
-                        <a href="Tienda.html">Conocenos</a>
+                        <a href="{% url 'Nosotros' %}">Conocenos</a>
                     </div>
                 </div>
                 <div class="curveado">
@@ -61,7 +61,7 @@
             <h1 id="titulo-dest">Nuestros Productos</h1>
             <div class="container_dest">
                 <div class="box_dest">
-                    <a href="Tienda.html">
+                    <a href="{% url 'Tienda' %}">
                         {% load static %}
                         <img src="{% static 'core/img/Rhapidophora.jpg'%}">
                         <div class="capa">
@@ -71,7 +71,7 @@
                 </div>
                 
                 <div class="box_dest">
-                    <a href="Tienda.html">
+                    <a href="{% url 'Tienda' %}">
                         {% load static %}
                         <img src="{% static 'core/img/macetero murta.jpg'%}">
                         <div class="capa">
@@ -81,7 +81,7 @@
                 </div>
                 
                 <div class="box_dest">
-                    <a href="Tienda.html">
+                    <a href="{% url 'Tienda' %}">
                         {% load static %}
                         <img src="{% static 'core/img/regadera.webp'%}">
                         <div class="capa">

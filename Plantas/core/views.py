@@ -1,6 +1,5 @@
 from django.shortcuts import render
-#from numpy import DataSource
-#from psycopg2 import DateFromTicks
+from .models import producto
 
 # Create your views here.
 
@@ -23,17 +22,30 @@ def Registro(request):
     return render(request, 'core/Registro.html')
 
 
-#def ContactoForm(request):
-    #return render(request,'core/ContactoForm.html')
+def ContactoForm(request):
+    return render(request,'core/ContactoForm.html')
 
-#def ContactoForm(request):
-    #datos ={
-        #'form':ContactoForm
-    #}
-    #if request.method=='post':
-        #formulario = ContactoForm(request.post)
+
+
+def ContactoForm(request):
+    datos ={
+        'form':ContactoForm
+    }
+    if request.method=='post':
+        formulario = ContactoForm(request.post)
         
-        #if formulario.is_valid:
-            #formulario.save
-            #datos['MENSAJE']="Datos guardados exitosamente"
-    #return render(request, 'core/ContactoForm.html', datos)
+        if formulario.is_valid:
+            formulario.save
+            datos['MENSAJE']="Datos guardados exitosamente"
+
+    return render(request, 'core/ContactoForm.html', datos)
+
+
+def tienda(request):
+    productos = producto.objects.all()
+
+    datos = {
+        'productos': productos
+    }
+
+    return render(request, 'core/Tienda.html', datos)

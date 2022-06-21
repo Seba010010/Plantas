@@ -49,17 +49,17 @@
             <a href="#"><i class="fa fa-envelope"></i> info@manglar.cl</a>
             <a href="#"><i class="fa fa-map-marked"></i> Logroño #4338.</a>
         </div>
-        <form action="#" autocomplete="off">
-            <!--{%csrf_token%}-->
+        <form action="#" autocomplete="off" method="get">
+            {%csrf_token%}
             <input type="text" name="nombre" placeholder="Tu Nombre" class="campo" id="nombreContacto">
             <input type="email" name="email" placeholder="Tu Email" class="campo" id="emailContacto">
             <textarea name="mensaje" placeholder="Tu Mensaje..." id="mensajeContacto"></textarea>
-            <!--{{ form.as_table}}-->
+            {{ form.as_table}}
             <button name="enviar" value="Enviar Mensaje" class="btn-enviar" id="contactoEnviar" onclick="validarFormContacto()">
                 Enviar Mensaje
             </button>
-            <!--<div class=" alert alert-sucess" role="alert">
-                {{mensaje}}-->
+            <div class=" alert alert-sucess" role="alert">
+                {{MENSAJE}}
             </div>
         </form>
     </div>
