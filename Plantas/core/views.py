@@ -41,6 +41,7 @@ def ContactoForm(request):
     return render(request, 'core/ContactoForm.html', datos)
 
 
+
 def tienda(request):
     productos = producto.objects.all()
 
