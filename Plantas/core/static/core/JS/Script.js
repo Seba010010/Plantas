@@ -140,7 +140,7 @@ window.addEventListener('load', ()=> {
                     console.log('LLUVIA');
                     break;
                   case 'Snow':
-                    iconoAnimado.url='.. img/snowy-6.svg'
+                    iconoAnimado.url= '.. img/img/snowy-6.svg'
                       console.log('NIEVE');
                     break;                        
                   case 'Clear':
@@ -152,11 +152,11 @@ window.addEventListener('load', ()=> {
                       console.log('ATMOSFERA');
                       break;  
                   case 'Clouds':
-                      iconoAnimado.url= '.. core/img/cloudy-day-2.svg'
+                      iconoAnimado.url= '.. img/cloudy-day-2.svg'
                       console.log('NUBES');
                       break;  
                   default:
-                    iconoAnimado.url= '.. core/img/cloudy-day-2.svg'
+                    iconoAnimado.url= '.. img/cloudy-day-2.svg'
                     console.log('por defecto');
                 }
 

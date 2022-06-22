@@ -9,7 +9,7 @@ class ContactoForm(ModelForm):
 
     class Meta:
         model = Contacto
-        fields =['nombreContacto', 'emailContacto', 'mensajeContacto']
+        fields =['nombreContacto''emailContacto''mensajeContacto']
 
 #class producto(ModelForm):
     #class Meta: 

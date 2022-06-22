@@ -59,6 +59,7 @@
   </div> <br>
   <div  class = "producto">
     <table id="Productos" class="table-bordered table-sm">
+      <thead>
           <tr>
             <td>Id Producto</td>
             <td>Nombre</td>
@@ -71,7 +72,8 @@
             <td>{{pr.Nombre}}</td>
             <td>{{pr.Categoria}}</td>
           </tr>
-          {% endfor %}  
+          {% endfor %}
+      </thead>      
     </table>        
   </div><br>
   <!--::::ini pie de Pagina::::::-->
