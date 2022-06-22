@@ -106,7 +106,7 @@ window.addEventListener('load', ()=> {
          //const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=$d92580f775301ffa57fa15570bc4dd69`
 
          //ubicación por ciudad
-         const url = 'https://api.openweathermap.org/data/2.5/weather?q=Santiago&APPID=d92580f775301ffa57fa15570bc4dd69'
+         const url = 'https://api.openweathermap.org/data/2.5/weather?q=Santiago&lang=es&units=metric&APPID=d92580f775301ffa57fa15570bc4dd69'
 
          fetch(url)
           .then( response => { return response.json()})
