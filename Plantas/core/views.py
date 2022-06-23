@@ -41,9 +41,9 @@ def ContactoForm(request):
     return render(request, 'core/ContactoForm.html', datos)
 
 
-def tienda(request):
+def Tienda(request):
     productos = producto.objects.all()
-
+    print(productos)
     datos = {
         'productos': productos
     }
