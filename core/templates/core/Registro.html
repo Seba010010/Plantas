@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -10,9 +11,9 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link href="Estilos/Style.css" rel="stylesheet" />
-    <title>Contacto</title>
-    <link rel="icon" type="image/x-icon" href="/img/Demeter - vivero.png">
+    <link href="{% static 'core/Estilos/Style.css'%}" rel="stylesheet" />
+    <title>Registro</title>
+    <link rel="icon" type="image/x-icon" href="{% static 'core/img/Demeter - vivero.png'%}">
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -27,44 +28,41 @@
             <h1>MANGLAR</h1>
         </div>
         <nav class="menu">
-            <a href="Home.html">Home</a>
-            <a href="Tienda">Tienda</a>
-            <a href="ONG">ONG</a>
-            <a href="Contacto.html">Contacto</a>
+            <a href="{% url 'Home' %}">Home</a>
+            <a href="{% url 'Tienda'%}">Tienda</a>
+            <a href="{% url 'Nosotros'%}">ONG</a>
+            <a href="{% url 'Contacto'%}">Contacto</a>
+            <a href="{% url 'Myaccount'%}">Mi Cuenta</a>
         </nav>
     </div>
 </header>
     <!--Iconos-->
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
 </head>
-<br><br>
-<body class="container_contacto">
-    <div class="container-form">
-        <div class="info-form">
-            <h2>Contáctanos</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui eligendi est voluptates quae ipsam eius, in quasi odio porro aut vel beatae aperiam.</p>
-            <a href="#"><i class="fa fa-phone"></i> 123-456-789</a>
-            <a href="#"><i class="fa fa-envelope"></i> info@manglar.cl</a>
-            <a href="#"><i class="fa fa-map-marked"></i> Logroño #4338.</a>
-        </div>
-        <form action="#" autocomplete="off">
-            <input type="text" name="nombre" placeholder="Tu Nombre" class="campo" id="nombreContacto">
-            <input type="email" name="email" placeholder="Tu Email" class="campo" id="emailContacto">
-            <textarea name="mensaje" placeholder="Tu Mensaje..." id="mensajeContacto"></textarea>
-            <button name="enviar" value="Enviar Mensaje" class="btn-enviar" id="contactoEnviar" onclick="validarFormContacto()">
-                Enviar Mensaje
-            </button>
-        </form>
+<br>
+<body>
+    <div class="franjaregistro">
+        <section class="form-register">
+            <h4>Registro</h4>
+            <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+            <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+            <input class="controls" type="password" name="correo" id="password" placeholder="Ingrese su Contraseña">
+            <p>Estoy de acuerdo con <a href="#">Terminos y Condiciones</a></p>
+            <input class="botons" type="submit" value="Registrar" onclick="validarFormRegistro()">
+            <p><a href="{% url 'Myaccount'%}">¿Ya tengo Cuenta?</a></p>
+        </section>
+        <br><br><br><br><br>
     </div>
-    <br><br>
-</body>    
+
+</body>
 <!--::::ini pie de Pagina::::::-->
 <footer class="pie-pagina">
     <div class="grupo-1">
         <div class="box">
             <figure>
                 <a href="#">
-                    <img src="img/Demeter - vivero.png" alt="Logo de Manglar">
+                    <img src="{% static 'core/img/Demeter - vivero.png'%}" alt="Logo de Manglar">
                 </a>
             </figure>
         </div>
@@ -76,7 +74,7 @@
             <p>Ayudanos a sensibilizar, desde la acción, a las personas sobre los efectos de la crisis climática, a través de la regeneración de bosque nativo.</p>
         </div>
         <div class="box">
-            <h2>Siguenos en nuestras RRHH</h2>
+            <h2>Siguenos en nuestras RRSS</h2>
             <div class="red-social">
                 <a href="#" class="fa fa-facebook"></a>
                 <a href="#" class="fa fa-instagram"></a>
@@ -88,14 +86,9 @@
     <div class="grupo-2">
         <small>&copy; 2021 <b>Manglar</b> - Todos los Derechos Reservados.</small>
     </div>
-
-    <button class="btn btn-primary" hidden>
-        Enviar
-    </button>
-     <!--Importacion de javascript interno-->
-     <script src="./JS/Script.js"></script>
-</body>
 </footer>
+<!--Importacion de javascript interno-->
+<script src="{% static 'core/JS/Script.js'%}"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-</html> 
+</html>    
