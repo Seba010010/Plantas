@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import producto
 
+
 # Create your views here.
 
 def Home(request):

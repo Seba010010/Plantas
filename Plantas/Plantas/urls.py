@@ -39,7 +39,10 @@ urlpatterns = [
     path('contacto/', views.Contacto, name="Contacto"),
     path('Registro/', views.Registro, name="Registro"),
     path('admin/', admin.site.urls),
+    path('', include('core.urls')),
+    path('api/', include('rest_producto.urls'))
 ]
+
 # add this lines
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
