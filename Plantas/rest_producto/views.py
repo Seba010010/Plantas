@@ -35,7 +35,7 @@ def lista_productos(request):
 @api_view(['GET', 'POST', 'DELETE'])
 def detalle_productos(request, id):
 
-    "GET, UPDTAE o DELETE de un producto"
+    "GET, UPDATE o DELETE de un producto"
 
     try:
         productos = producto.objects.get(id_producto = id)
