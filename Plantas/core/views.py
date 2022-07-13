@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from .models import producto
-
+from .models import producto, ContactoForm, RegistroForm
 
 # Create your views here.
 
@@ -50,3 +49,14 @@ def Tienda(request):
     }
 
     return render(request, 'core/Tienda.html', datos)
+
+
+
+def RegistroForm(request):
+    registro = RegistroForm.objects.all()
+    print(registro)
+    datos = {
+        'registro': registro
+    }
+
+    return render(request, 'core/Registro.html', datos)

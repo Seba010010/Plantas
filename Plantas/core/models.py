@@ -38,3 +38,14 @@ class ContactoForm(models.Model):
 
     def str(self):
         return self.mensaje
+
+
+class RegistroForm(models.Model):
+
+    nombres= models.CharField(max_length=30, verbose_name='Nombres')
+    apellidos= models.CharField(max_length=30, verbose_name='Apellidos')
+    correo= models.CharField(max_length=20, primary_key=True, verbose_name='Correo')
+    contrasena= models.CharField(max_length=20, verbose_name='Contrasena')
+
+    def str(self):
+        return self.correo
