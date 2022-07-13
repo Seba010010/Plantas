@@ -32,7 +32,7 @@ def lista_productos(request):
 
 
 #CREANDO SERVICIOS REST PUT, DELETE
-@api_view(['GET', 'POST', 'DELETE'])
+@api_view(['GET', 'PUT', 'DELETE'])
 def detalle_productos(request, id):
 
     "GET, UPDATE o DELETE de un producto"
