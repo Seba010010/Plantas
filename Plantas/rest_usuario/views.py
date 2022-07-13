@@ -1,16 +1,19 @@
 from django.shortcuts import render
 from rest_framework import status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
 from core.models import RegistroForm
 from .serializers import RegistroFormSerializer
 
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.permissions import IsAuthenticated
 
 #CREANDO SERVICIOS 
 @csrf_exempt
 @api_view(['GET', 'POST'])
+@permission_classes((IsAuthenticated))
 def lista_usuarios(request):
 
     "lista de usuarios"
@@ -31,6 +34,7 @@ def lista_usuarios(request):
 
 #CREANDO SERVICIOS REST PUT, DELETE
 @api_view(['GET', 'PUT', 'DELETE'])
+@permission_classes((IsAuthenticated))
 def detalle_usuarios(request, id):
 
     "GET, UPDATE o DELETE de un USUARIO"

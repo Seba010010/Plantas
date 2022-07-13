@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'core',
     'rest_producto',
     'rest_usuario',
-    
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -144,4 +144,8 @@ REST_FRAMEWORK = {
        'rest_framework.permissions.AllowAny'
         #'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
     ]
+    
+    #'DEFAULT_AUTHENTICATION_CLASSES':[
+    #    'rest_framework.authentication.TokenAuthentication',
+    #], 
 }
